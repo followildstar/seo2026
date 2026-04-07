@@ -1,4 +1,5 @@
 const ACCESS_PASSWORD = "welcome";
+const ACCESS_DURATION = 24 * 60 * 60 * 1000; // 24시간
 
 function openModal(id) {
   const modal = document.getElementById(id);
@@ -17,11 +18,36 @@ function closeAllModals() {
 }
 
 function grantAccess() {
-  localStorage.setItem("portfolio_access", "granted");
+  const expiresAt = Date.now() + ACCESS_DURATION;
+
+  localStorage.setItem(
+    "portfolio_access",
+    JSON.stringify({
+      granted: true,
+      expiresAt,
+    })
+  );
 }
 
 function hasAccess() {
-  return localStorage.getItem("portfolio_access") === "granted";
+  const raw = localStorage.getItem("portfolio_access");
+  if (!raw) return false;
+
+  try {
+    const data = JSON.parse(raw);
+
+    if (!data.granted) return false;
+
+    if (!data.expiresAt || Date.now() > data.expiresAt) {
+      localStorage.removeItem("portfolio_access");
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    localStorage.removeItem("portfolio_access");
+    return false;
+  }
 }
 
 function handlePasswordSubmit(event) {
