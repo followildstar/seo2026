@@ -216,12 +216,12 @@
   <div class="modal" id="accessModal">
     <div class="modal-card">
       <h2 class="modal-title">Private access</h2>
-      <p class="modal-copy">메인 화면은 먼저 보이되, 상세 페이지 이동 시 비밀번호 확인 후 입장하는 구조입니다.</p>
+      <p class="modal-copy">디자인상 보안 유지를 위해 비밀번호 확인 후 입장하실 수 있습니다.</p>
       <form onsubmit="handlePasswordSubmit(event)">
         <input id="passwordInput" class="input" type="password" placeholder="Enter password" autocomplete="off" />
         <div id="passwordError" class="error-text"></div>
         <div class="modal-actions">
-          <button type="button" class="btn" onclick="closeModal(this)">Close</button>
+          <button type="button" class="btn" onclick="handleAccessCancel()">Close</button>
           <button type="submit" class="btn btn-primary">Enter</button>
         </div>
       </form>
