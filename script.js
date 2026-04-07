@@ -103,7 +103,11 @@ function bindGlobalEvents() {
     }
 
     if (e.target.classList.contains("modal")) {
-      e.target.classList.remove("is-open");
+      handleAccessCancel();
+    }
+
+    if (e.key === "Escape") {
+      handleAccessCancel();
     }
   });
 
