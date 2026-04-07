@@ -17,6 +17,29 @@ function closeAllModals() {
   });
 }
 
+function handleAccessCancel() {
+  const isHome = document.body.dataset.page === "home";
+  const isProtected = document.body.dataset.protected === "true";
+
+  closeAllModals();
+
+  if (isProtected) {
+    window.location.href = "index.html";
+    return;
+  }
+
+  if (isHome) {
+    if (history.length > 1) {
+      history.back();
+    } else {
+      window.location.href = "about:blank";
+    }
+    return;
+  }
+
+  window.location.href = "index.html";
+}
+
 function grantAccess() {
   const expiresAt = Date.now() + ACCESS_DURATION;
 
@@ -103,17 +126,25 @@ function bindGlobalEvents() {
     }
 
     if (e.target.classList.contains("modal")) {
-      handleAccessCancel();
-    }
+      const isAccessModal = e.target.id === "accessModal";
 
-    if (e.key === "Escape") {
-      handleAccessCancel();
+      if (isAccessModal) {
+        handleAccessCancel();
+      } else {
+        e.target.classList.remove("is-open");
+      }
     }
   });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      closeAllModals();
+      const accessModal = document.getElementById("accessModal");
+
+      if (accessModal && accessModal.classList.contains("is-open")) {
+        handleAccessCancel();
+      } else {
+        closeAllModals();
+      }
     }
   });
 }
