@@ -17,8 +17,35 @@
 
     <main class="front-page">
       <section class="grid-newspaper">
+
+
+        <!-- 리스트영역 -->
+         <article class="paper-card span-7" onclick="location.href='sub01.html'">
+          <div class="paper-thumb wide">
+            <img src="https://picsum.photos/800/" alt="">
+          </div>
+          <div class="paper-body">
+            <div class="paper-tag">Feature</div>
+            <h3 class="paper-title">Screen dream</h3>
+            <p class="paper-copy">큰 화면 영역은 대표 프로젝트를 강조하기 좋습니다. 이미지와 리드 문장을 넣으면 훨씬 완성도가 올라갑니다.</p>
+          </div>
+        </article>
+
+        <article class="paper-card span-5" onclick="location.href='sub02.html'">
+          <div class="paper-thumb">
+            <img src="https://picsum.photos/600/" alt="">
+          </div>
+          <div class="paper-body">
+            <div class="paper-tag">Column</div>
+            <h3 class="paper-title">Publishing detail</h3>
+            <p class="paper-copy">반응형 퍼블리싱, 운영 개선, UI 정리 등의 내용을 넣을 수 있습니다.</p>
+          </div>
+        </article>
+
         <article class="paper-card span-12" onclick="location.href='sub01.html'">
-          <div class="paper-thumb wide"></div>
+          <div class="paper-thumb small">
+            <img src="https://picsum.photos/1280/" alt="">
+          </div>
           <div class="paper-body">
             <div class="paper-tag">Cover Story</div>
             <h2 class="paper-title hero">design</h2>
@@ -27,6 +54,9 @@
             </p>
           </div>
         </article>
+
+       
+
 
         <article class="paper-card span-3" onclick="requestEntry('sub01.html')">
           <div class="paper-thumb tall"></div>
@@ -64,24 +94,7 @@
           </div>
         </article>
 
-        <article class="paper-card span-7" onclick="requestEntry('sub05.html')">
-          <div class="paper-thumb wide"></div>
-          <div class="paper-body">
-            <div class="paper-tag">Feature</div>
-            <h3 class="paper-title">Screen dream</h3>
-            <p class="paper-copy">큰 화면 영역은 대표 프로젝트를 강조하기 좋습니다. 이미지와 리드 문장을 넣으면 훨씬 완성도가 올라갑니다.</p>
-          </div>
-        </article>
-
-        <article class="paper-card span-5" onclick="requestEntry('sub06.html')">
-          <div class="paper-thumb"></div>
-          <div class="paper-body">
-            <div class="paper-tag">Column</div>
-            <h3 class="paper-title">Publishing detail</h3>
-            <p class="paper-copy">반응형 퍼블리싱, 운영 개선, UI 정리 등의 내용을 넣을 수 있습니다.</p>
-          </div>
-        </article>
-
+        
         <article class="paper-card span-4" onclick="requestEntry('sub07.html')">
           <div class="paper-thumb"></div>
           <div class="paper-body">
@@ -216,7 +229,7 @@
   <div class="modal" id="accessModal">
     <div class="modal-card">
       <h2 class="modal-title">Private access</h2>
-      <p class="modal-copy">디자인상 보안 유지를 위해 비밀번호 확인 후 입장하실 수 있습니다.</p>
+      <p class="modal-copy">메인 화면은 먼저 보이되, 상세 페이지 이동 시 비밀번호 확인 후 입장하는 구조입니다.</p>
       <form onsubmit="handlePasswordSubmit(event)">
         <input id="passwordInput" class="input" type="password" placeholder="Enter password" autocomplete="off" />
         <div id="passwordError" class="error-text"></div>
