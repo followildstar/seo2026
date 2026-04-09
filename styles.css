@@ -776,7 +776,8 @@ input {
 
 .img-full {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 8; 
+  /* 1280 640  */
   background: linear-gradient(135deg, #dce6ef 0%, #eaf0f6 100%);
   position: relative;
   overflow: hidden;
