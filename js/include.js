@@ -19,10 +19,10 @@ async function initIncludes() {
   const pageType = document.body.dataset.page;
 
   if (pageType === "project") {
-    await loadInclude("header-include", "./components/header-project.html");
+    await loadInclude("header-include", "./components/header.html");
   } else {
-    await loadInclude("header-include", "./components/header-home.html");
-    await loadInclude("footer-include", "./components/footer-home.html");
+    await loadInclude("header-include", "./components/header.html");
+    await loadInclude("footer-include", "./components/footer.html");
   }
 
   if (typeof updateProjectHeaderTitle === "function") {
