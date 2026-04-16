@@ -852,7 +852,7 @@ input {
   font-size: 0.96rem;
   line-height: 1.95;
   color: #4c4339;
-  margin: 0 0 1rem;
+  margin:0;
 }
 
 .proj-section p:last-child {
@@ -897,7 +897,7 @@ input {
   font-size: 1rem;
   line-height: 2;
   color: #4c4339;
-  margin: 0 0 0.8rem;
+  margin: 0;
 }
 .proj-insight .insight-label {
   font-size: 0.72rem;
