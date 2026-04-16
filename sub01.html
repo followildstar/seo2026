@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project 01 | MONO PORTFOLIO</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body
-  data-protected="true"
-  data-prev="index.html"
-  data-next="sub02.html"
->
+
+<body data-protected="true" data-prev="index.html" data-next="sub02.html">
   <div id="header-include"></div>
 
   <div class="site-wrap">
@@ -18,9 +16,10 @@
       <div class="proj-wrap">
         <div class="proj-title-block">
           <div class="kicker">Feature Story</div>
-          <h2>메신저 UI 브랜드 컬러 정합성 개선</h2>
+          <h2>메신저 UI 브랜드 아이덴티티 정립</h2>
           <p class="proj-lead">
-            새로운 메신저 시스템 도입에 맞춰 회사 컬러를 체계적으로 적용하고, 아이콘톤을 정합하여 일관된 브랜드 경험을 구축했으며 가이드를 제공.
+            신규 메신저 시스템 도입에 맞춰 브랜드 컬러와 아이콘 시스템을 재정의하고, 
+  일관된 시각 언어와 가이드를 구축하여 통합된 사용자 경험을 설계했다.
           </p>
         </div>
 
@@ -28,15 +27,11 @@
           <img src="img/img_01.png" alt="">
         </div>
         <p class="img-caption">리뉴얼 전후 전체 화면 비교</p>
+        
 
         <div class="proj-section">
           <h3>Context</h3>
-          <p>사내 메신저 리뉴얼 프로젝트로, 기존 디자인에 현 회사 컬러를 반영하는 것이 목표였다. 담당 역할은 리뉴얼 디자인과 아이콘 제안, 적용 가이드 제작 및 전달이었다.</p>
-        </div>
-
-        <div class="proj-section">
-          <h3>Problem</h3>
-          <p>회사의 브랜드 컬러와 아이콘 톤이 완전히 일치하지 않았고, 단순 배경색 교체만으로는 전체 일관성 확보가 어려웠다. 필요 이미지 수급과 적용 기준 부재로 인한 구현 혼선 가능성도 있었다.</p>
+          <p>사내 메신저 리뉴얼 프로젝트로, 기존 UI에 회사 브랜드 아이덴티티를 반영하고 일관된 디자인 기준을 수립하는 것이 목표였다. 리뉴얼 디자인을 비롯해 아이콘 스타일 제안, 컬러 시스템 정리, 적용 가이드 제작 및 전달까지 전반적인 디자인 구조를 설계했다.</p>
         </div>
 
         <hr class="divider">
@@ -49,31 +44,40 @@
           </div>
         </div>
 
+          <div class="proj-section">
+            <h3 class="problem">Problem</h3>
+            <ul>
+              <li>브랜드 컬러와 UI 요소 간 톤 불일치</li>
+              <li>솔리드와 라인 아이콘 혼재로 인한 스타일 불균형</li>
+              <li>아이콘 두께 및 형태 기준 부재</li>
+              <li>사용자 상태 표현의 시각적 구분 부족</li>
+              <li>버튼 및 UI 컴포넌트 구조 기준 부재</li>
+            </ul>
+          </div>
 
-        <div class="proj-section">
-          <h3>My Judgment</h3>
-          <p>시스템 전반에서 아이콘 스타일의 일관성이 부족하다고 판단하여, 모든 시스템 요소에 적용되는 아이콘을 재정의하고 전반적인 교체 작업을 진행하였다.</p>
+           <div class="img-full img-ph">
+          <img src="img/img_04.png" alt="">
+           <p class="img-caption">사내 전용 이모티콘 제작 및 적용</p>
         </div>
+          <div class="proj-section">
+            <h3>Strategy</h3>
+            <ul>
+              <li>브랜드 컬러를 기반으로 UI 컬러 시스템을 재정의하고, 상태별 컬러 역할을 명확히 구분함</li>
+              <li>아이콘 스타일을 라인/솔리드 기준으로 체계화하고, stroke 두께 및 형태 규칙을 정의함</li>
+              <li>사용자 상태에 따른 시각적 표현 기준을 수립함</li>
+              <li>버튼 및 UI 컴포넌트를 기능 단위로 재정리하고, 형태(radius) 및 구조 기준을 정의함</li>
+            </ul>
+          </div>
 
-        <div class="proj-section">
-          <h3>Strategy</h3>
-          <ul>
-            <li>브랜드 컬러 팔레트를 UI 토큰으로 매핑</li>
-            <li>아이콘 톤, 두께, 크기 규칙 정의 및 제안</li>
-            <li>필요한 이미지 목록화 및 수급</li>
-            <li>즉시 적용 가능한 시각 가이드 제작 및 전달</li>
-          </ul>
-        </div>
 
         <hr class="divider">
-        
-        <div class="img-full img-ph">
-          <img src="img/img_04.png" alt="">
-        </div>
-        <p class="img-caption">아이콘 스타일 재정립</p>
 
-        
-        <p class="img-caption">아이콘 세트 톤·컬러 재정의 전후</p>
+        <div class="img-full img-ph">
+          <img src="img/img_05.png" alt="">
+        </div>
+         <p class="img-caption">아이콘 스타일 재정립</p>
+       
+
 
         <div class="proj-section">
           <h3>Execution</h3>
@@ -83,30 +87,33 @@
             <li>필요한 이미지 요청 및 수급 완료</li>
             <li>적용 가이드 문서화 및 전달, 에셋 정리</li>
             <li>가이드에 따라 메신저 UI에 컬러·아이콘 일관 적용</li>
+            <li>사내 캐릭터 활용하여 사내에서 사용하는 이모티콘 제작</li>
           </ul>
         </div>
 
         <hr class="divider">
 
         <div class="img-full img-ph">
-          <img src="img/img_05.png" alt="">
+          <img src="img/img_06.png" alt="">
         </div>
-        <p class="img-caption">최종 적용 가이드 및 에셋 패키지</p>
+        <p class="img-caption">사내 전용 이모티콘 제작 및 적용</p>
+       
 
         <div class="proj-section">
           <h3>Result</h3>
-          <p>회사 컬러와 아이콘 톤이 일관되게 적용된 메신저 UI를 완성했고, 명확한 가이드와 에셋을 확보하여 사내 사용 가능한 상태로 리뉴얼이 마무리되었다.</p>
+          <p>브랜드 컬러와 아이콘 시스템이 일관되게 적용된 메신저 UI를 구축하고, 명확한 디자인 가이드와 에셋을 확보하여 사내 전반에 확장 가능한 상태로 리뉴얼을 완료했다. 이를 통해 시각적 통일성과 주요 기능의 인지성이 향상되었다.</p>
         </div>
 
         <div class="proj-insight">
-          <div class="insight-label">Insight</div>
-          <p>단순 색상 치환만으로는 브랜드 정합성을 확보하기 어렵다. 아이콘과 세부 요소까지 규칙화하고 가이드를 제공하는 것이 중요하다.</p>
-          <p>소스 원본의 형태와 룰을 유지하면서 교체 작업을 진행하여, 이미지만 바꾸면 즉시 적용할 수 있는 구조를 만들었다.</p>
+          <div class="insight-label">insight</div>
+          <p>브랜드 정합성은 단순한 컬러 적용이 아닌, 아이콘과 컴포넌트까지 포함한 
+시각 시스템 전반의 규칙화에서 완성된다는 것을 확인했다. <br>
+          기존 구조를 유지하면서 교체 가능한 방식으로 설계하여, 에셋 변경만으로도 빠르게 확장 및 유지보수가 가능한 구조를 구축했다.</p>
         </div>
 
         <div class="proj-info-footer">
           <strong>Role</strong> UI Design / Guide &nbsp;·&nbsp;
-          <strong>Period</strong> 2026.00 – 2026.00 &nbsp;·&nbsp;
+          <strong>Period</strong> 2025 &nbsp;·&nbsp;
           <strong>Type</strong> Brand Renewal &nbsp;·&nbsp;
           <strong>Output</strong> Design + Guide Document
         </div>
@@ -120,4 +127,5 @@
   <script src="js/include.js"></script>
   <script src="js/project-footer.js"></script>
 </body>
+
 </html>
