@@ -934,6 +934,10 @@ input {
     margin-top: 2rem;
     padding: 1.3rem 1rem;
 }
+  .img-caption {
+    margin-top: -1.8rem;
+    margin-left:0.5rem;
+  }
 }
 
 @media (max-width: 600px) {
