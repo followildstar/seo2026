@@ -174,3 +174,21 @@ function updateProjectHeaderTitle() {
   const title = document.body.dataset.projectTitle || "PROJECT";
   headerTitle.textContent = title;
 }
+
+
+// 라이트박스 추가
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+
+// 페이지 안의 모든 img에 클릭 이벤트 연결
+document.querySelectorAll('img').forEach(img => {
+  img.style.cursor = 'pointer';
+  img.onclick = () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+  };
+});
+
+// 클릭하면 닫기
+lightbox.onclick = () => lightbox.classList.remove('active');
