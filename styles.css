@@ -32,6 +32,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   letter-spacing:-0.02rem;
   line-height: 1.5;
+  word-break: auto-phrase;
 }
 
 img {
@@ -683,7 +684,7 @@ input {
   }
 
   .site-wrap {
-    width: min(calc(100% - 2rem), var(--max));
+    width: min(calc(100% - 1.3rem), var(--max));
   }
 
   .topbar-inner {
@@ -758,7 +759,7 @@ input {
 .proj-title-block h2 {
   font-family: 'Noto sans KR', serif;
   font-size: clamp(2rem, 6vw, 2.6rem);
-  line-height: 1.05;
+  line-height: 1.3;
   letter-spacing: -0.04em;
   margin: 0 0 1rem;
   font-weight: 700;
@@ -929,6 +930,10 @@ input {
   .proj-wrap {
     padding: 2rem 0 4rem;
   }
+  .proj-insight {
+    margin-top: 2rem;
+    padding: 1.3rem 1rem;
+}
 }
 
 @media (max-width: 600px) {
