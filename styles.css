@@ -948,7 +948,7 @@ input {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgb(243 243 243 / 63%);
+      background: rgb(98 98 98 / 63%);
       z-index: 200;
       align-items: center;
       justify-content: center;
@@ -968,9 +968,17 @@ input {
     .lightbox-close {
       position: fixed;
       top: 2rem; right: 3rem;
-      font-family: 'EB Garamond', serif;
-      font-style: italic;
       font-size: 1rem;
-      color: var(--muted);
+      color: #fff;
       cursor: pointer;
     }
+
+
+@media (max-width: 860px) {
+  .lightbox img {
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+}
+
+
