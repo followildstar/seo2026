@@ -948,12 +948,12 @@ input {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgb(98 98 98 / 63%);
+      background: rgb(82 82 82 / 90%);
       z-index: 200;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(7px);
     }
 
     .lightbox.active { display: flex; }
@@ -963,6 +963,8 @@ input {
       max-height: 88vh;
       object-fit: contain;
       animation: fadeUp 0.3s ease;
+      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
     }
 
     .lightbox-close {
