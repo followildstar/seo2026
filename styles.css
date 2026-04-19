@@ -970,7 +970,7 @@ input {
     .lightbox-close {
       position: fixed;
       top: 2rem; right: 3rem;
-      font-size: 1rem;
+      font-size: 0;
       color: #fff;
       cursor: pointer;
     }
