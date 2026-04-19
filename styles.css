@@ -941,3 +941,36 @@ input {
     grid-template-columns: 1fr;
   }
 }
+
+
+ /* 라이트박스 */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgb(243 243 243 / 63%);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox img {
+      max-width: 88vw;
+      max-height: 88vh;
+      object-fit: contain;
+      animation: fadeUp 0.3s ease;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 2rem; right: 3rem;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--muted);
+      cursor: pointer;
+    }
