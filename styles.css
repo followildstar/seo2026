@@ -50,6 +50,15 @@ input {
   font: inherit;
 }
 
+.pc_on {
+  display: block;
+}
+
+@media (max-width: 766px) {
+  .pc_on {
+    display: none;
+  }
+}
 /* ─── Site wrap ───────────────────────────────── */
 .site-wrap {
   width: min(calc(100% - 4rem), var(--max));
@@ -87,6 +96,8 @@ input {
 
 .topbar.is-compact .topbar-inner {
   align-items: center;
+  height: 60px;
+  padding: 0;
 }
 
 .brand-kicker {
@@ -129,7 +140,7 @@ input {
 
 .topbar.is-compact .brand-title {
   font-size: 5rem;
-  line-height: 1rem;
+    white-space: nowrap;
 }
 
 @media (max-width: 720px) {
@@ -139,7 +150,6 @@ input {
 
   .topbar.is-compact .brand-title {
     font-size: 4rem;
-    white-space: nowrap;
   }
   .topbar.is-compact .topbar-inner {
     align-items: flex-start;
@@ -155,7 +165,13 @@ input {
   flex-wrap: wrap;
   justify-content: flex-end;
 }
-
+@media (max-width: 720px) {
+.topbar.is-compact .top-actions{
+   position: absolute;
+   right: 10px;
+   top: 20px;
+}
+}
 .nav-link {
   font-size: 0.82rem;
   letter-spacing: 0.1em;
@@ -728,9 +744,6 @@ input {
     margin-bottom: 0.5rem;
   }
 
-  .topbar.is-compact .top-actions {
-    display: none;
-  }
 }
 
 .site-footer {
@@ -866,6 +879,10 @@ input {
   list-style: none;
 }
 
+.proj-section p + ul {
+    margin-top: 20px;
+}
+
 .proj-section ul li {
   font-size: 0.96rem;
   line-height: 1.9;
@@ -937,6 +954,9 @@ input {
   .img-caption {
     margin-top: -1.8rem;
     margin-left:0.5rem;
+  }
+  .proj-section p + ul {
+    margin-top: 10px;
   }
 }
 
