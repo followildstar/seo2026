@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bindGlobalEvents();
   ensureProtectedPage();
   ensureIndexAccess();
+  initLightbox();
 });
 
 function updateProjectHeaderTitle() {
@@ -175,20 +176,51 @@ function updateProjectHeaderTitle() {
   headerTitle.textContent = title;
 }
 
+function ensureLightboxElements() {
+  let lightbox = document.getElementById("lightbox");
+  let lightboxImg = document.getElementById("lightboxImg");
 
-// 라이트박스 추가
+  if (!lightbox || !lightboxImg) {
+    lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.id = "lightbox";
+    lightbox.innerHTML = `
+      <span class="lightbox-close">close</span>
+      <img id="lightboxImg" alt="" />
+    `;
 
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
+    document.body.appendChild(lightbox);
+    lightboxImg = lightbox.querySelector("#lightboxImg");
+  }
 
-// 페이지 안의 모든 img에 클릭 이벤트 연결
-document.querySelectorAll('img').forEach(img => {
-  img.style.cursor = 'pointer';
-  img.onclick = () => {
-    lightboxImg.src = img.src;
-    lightbox.classList.add('active');
-  };
-});
+  return { lightbox, lightboxImg };
+}
 
-// 클릭하면 닫기
-lightbox.onclick = () => lightbox.classList.remove('active');
+function initLightbox() {
+  const { lightbox, lightboxImg } = ensureLightboxElements();
+  if (!lightbox || !lightboxImg) return;
+
+  document.querySelectorAll("img").forEach((img) => {
+    if (img.id === "lightboxImg" || img.dataset.lightboxBound === "true") return;
+
+    img.style.cursor = "pointer";
+    img.dataset.lightboxBound = "true";
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || "";
+      lightbox.classList.add("active");
+    });
+  });
+
+  if (lightbox.dataset.lightboxBound === "true") return;
+
+  lightbox.dataset.lightboxBound = "true";
+  lightbox.addEventListener("click", (event) => {
+    if (
+      event.target === lightbox ||
+      event.target.closest(".lightbox-close")
+    ) {
+      lightbox.classList.remove("active");
+    }
+  });
+}
