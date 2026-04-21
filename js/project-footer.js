@@ -4,9 +4,6 @@ function buildProjectFooter() {
 
   const prev = document.body.dataset.prev || "index.html";
   const next = document.body.dataset.next || "";
-  const pageNumber = document.body.dataset.pageNumber || "";
-  const totalPages = document.body.dataset.totalPages || "20";
-
   const nextButton = next
     ? `<a class="btn btn-primary" href="${next}">Next →</a>`
     : "";
