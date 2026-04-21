@@ -229,7 +229,7 @@ input {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 400;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 /* ─── Front page ──────────────────────────────── */
@@ -267,7 +267,7 @@ input {
   background: linear-gradient(135deg, #e8eef4 0%, #f0f4f8 100%);
   position: relative;
   overflow: hidden;
-  margin: 30px 20px;
+  margin: 10px;
 }
 
 .paper-thumb.small {
@@ -290,16 +290,7 @@ input {
 }
 
 .paper-body {
-  padding: 0 1.7rem 1.6rem;
-}
-
-.paper-tag {
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.68rem;
-  margin-bottom: 0.55rem;
-  font-weight: 500;
+  padding: 0 13px 1.6rem;
 }
 
 .paper-title {
