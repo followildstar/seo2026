@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sami float banner</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f3f4f8;
+            font-family: sans-serif;
+            background-image: url(img/bg.jpg);
+            background-size: contain;
+        }
+
+        .banner-wrap {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+
+        .flip {
+            width: 125px;
+            height: 125px;
+            position: relative;
+        }
+
+        .card-inner {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        .character-img {
+            position: absolute;
+            bottom: 4px;
+            left: -6px;
+            width: 100%;
+            display: block;
+        }
+
+        img#samiFront {
+            left: 0px;
+            bottom: 1px;
+        }
+
+        img#samiBack {
+            left: -9px;
+            bottom: 3px;
+        }
+
+        .character-img.back {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .character-img.back.show {
+            opacity: 1;
+            z-index: 3;
+        }
+
+        img.shadow {
+            position: absolute;
+            bottom: 0px;
+            left: 30px;
+            width: 55px;
+            z-index: 1;
+        }
+
+        /* 말풍선 스타일 */
+        .comment {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.1s ease;
+            z-index: 10;
+        }
+
+        img.comment01 {
+            top: -32px;
+            width: 110px;
+            right: 8px;
+            opacity: 1;
+        }
+
+        img.comment02 {
+            top: -51px;
+            right: 8px;
+            width: 205px;
+        }
+
+        .flip:hover .comment01 {
+            opacity: 0;
+        }
+
+        .flip:hover .comment02 {
+            opacity: 1;
+        }
+
+        img.character-img[src*="turnning"] {
+            width: 90%;
+            left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner-wrap">
+        <div class="flip" id="samiCard">
+            <img src="img/comment01.svg" alt="" class="comment comment01">
+            <img src="img/comment02.svg" alt="" class="comment comment02">
+
+            <div class="card-inner">
+                <img class="character-img front" id="samiFront" src="img/back.gif" alt="SAMI 캐릭터">
+                <img class="character-img back" id="samiBack" src="img/front.gif" alt="SAMI 캐릭터 뒷모습">
+                <img src="img/shdow.png" alt="" class="shadow">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const samiCard = document.getElementById('samiCard');
+        const samiFront = document.getElementById('samiFront');
+        const samiBack = document.getElementById('samiBack');
+
+        const imgFront = 'img/back.gif';
+        const imgTurning = 'img/turnning.gif';
+
+        const turnDuration = 800;
+
+        let turnTimeout;
+
+        samiCard.addEventListener('mouseenter', () => {
+            clearTimeout(turnTimeout);
+
+            samiFront.style.opacity = '1';
+            samiBack.classList.remove('show');
+            samiFront.src = imgTurning + '?t=' + new Date().getTime();
+
+            turnTimeout = setTimeout(() => {
+                samiBack.classList.add('show');
+                setTimeout(() => {
+                    samiFront.style.opacity = '0';
+                }, 20);
+
+            }, turnDuration);
+        });
+
+        samiCard.addEventListener('mouseleave', () => {
+            clearTimeout(turnTimeout);
+
+            samiBack.classList.remove('show');
+            samiFront.style.opacity = '1';
+            samiFront.src = imgFront;
+        });
+    </script>
+
+</body>
+
+</html>
