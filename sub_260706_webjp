@@ -23,7 +23,7 @@
     </div>
 
     <div class="img-full img-ph">
-      <img src="img/message/img_01.png" alt="">
+      <img src="img/webjp/img_01.png" alt="">
     </div>
     <p class="img-caption">레이아웃은 유지하고 텍스트만 일본어로 교체한 전후 비교입니다.</p>
 
@@ -33,13 +33,17 @@
     </div>
 
     <hr class="divider">
+<div class="img-full img-ph">
+       <iframe src="img/webjp/index.html" width="100%" height="500" frameborder="0"></iframe>
+    </div>
+
 
     <div class="img-duo">
       <div class="img-duo-item img-ph">
-        <img src="img/message/img_02.png" alt="">
+        <img src="img/webjp/img_02.png" alt="">
       </div>
       <div class="img-duo-item img-ph">
-        <img src="img/message/img_03.png" alt="">
+        <img src="img/webjp/img_03.png" alt="">
       </div>
     </div>
     <p class="img-caption">
@@ -58,7 +62,7 @@
     </div>
 
     <div class="img-full img-ph">
-      <img src="img/message/img_04.png" alt="">
+      <img src="img/webjp/img_04.png" alt="">
     </div>
     <p class="img-caption">반응형 구간에서 줄바꿈과 행간을 세밀하게 보정했습니다.</p>
 
@@ -75,7 +79,7 @@
     <hr class="divider">
 
     <div class="img-full img-ph">
-      <img src="img/message/img_05.png" alt="">
+      <img src="img/webjp/img_05.png" alt="">
     </div>
     <p class="img-caption">텍스트와 이미지 자산을 분리 관리해 누락을 방지했습니다.</p>
 
@@ -93,7 +97,7 @@
     <hr class="divider">
 
     <div class="img-full img-ph">
-      <img src="img/message/img_06.png" alt="">
+      <img src="img/webjp/img_06.png" alt="">
     </div>
     <p class="img-caption">브랜드 톤을 해치지 않는 서체를 중심으로 후보를 압축했습니다.</p>
 
