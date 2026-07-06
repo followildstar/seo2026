@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일본어 폰트 적용 제안 — 삼양</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700;900&family=IBM+Plex+Sans+JP:wght@300;400;500;700&family=M+PLUS+2:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- GLOBAL DATA (하단 스크립트에서 참조)                                      -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script>
+  // 폰트 메타데이터
+  const FONTS = {
+    ibm: {
+      name: "IBM Plex Sans JP",
+      css: "'IBM Plex Sans JP', sans-serif",
+      color: "#1d4ed8",
+      weights: ["300", "400", "500", "700"],
+    },
+    noto: {
+      name: "Noto Sans JP",
+      css: "'Noto Sans JP', sans-serif",
+      color: "#059669",
+      weights: ["300", "400", "500", "700", "900"],
+    },
+    mplus: {
+      name: "M PLUS 2",
+      css: "'M PLUS 2', sans-serif",
+      color: "#7c3aed",
+      weights: ["300", "400", "500", "700", "900"],
+    },
+    yugothic: {
+      name: "Yu Gothic",
+      css: "'Yu Gothic', 'YuGothic', 'Yu Gothic UI', sans-serif",
+      color: "#0891b2",
+      weights: ["300", "400", "500", "700"],
+    },
+  };
+
+  const FONT_LIST = ["ibm", "noto", "mplus", "yugothic"];
+
+  // 표본 텍스트
+  const SAMPLES = {
+    sentence: "スペシャルティ素材企業、三洋",
+    bodyLong: "高品質な素材と革新的な技術で、社会の発展に貢献します。私たちは、持続可能な未来を見据えた素材開発を推進しています。",
+    bodyShort: "高品質な素材と革新的な技術で、社会の発展に貢献します。",
+    kana: "あいうえおかきくけこさしすせそたちつてとなにぬねの",
+    kanji: "素材技術開発品質革新製造環境持続可能性",
+    alpha: "ABCDEFGHIJKLMNabcdefghijklmn 0123456789",
+  };
+
+  // 폰트별 상세 정보
+  const FONT_DETAILS = {
+    ibm: {
+      origin: "IBM",
+      license: "SIL Open Font License",
+      use: ["본문", "타이틀"],
+      tags: ["테크니컬", "신뢰", "정밀"],
+      description: "IBM의 글로벌 서체 시스템 Plex의 일본어 버전. 테크니컬하고 정밀한 인상이 강하며, 라틴 문자와의 조화가 뛰어나다.",
+      scores: {
+        readability: 90,
+        brand: 90,
+        versatility: 80,
+        distinction: 82,
+        webPerf: 88,
+      },
+      strengths: [
+        "라틴 + 일본어 혼용 시 조화 최고",
+        "테크니컬·기술기업 인상 — 소재사에 직결",
+        "자형이 단정하고 정밀, 신뢰감 높음",
+      ],
+      weaknesses: [
+        "굵기 옵션 4종으로 Noto보다 제한적",
+        "감성·따뜻함이 약해 친근한 인상 연출 어려움",
+      ],
+      verdict: "스페셜티 소재 기업에 가장 잘 맞는 서체.",
+      recommended: true,
+    },
+    noto: {
+      origin: "Google / Adobe",
+      license: "SIL Open Font License",
+      use: ["본문", "타이틀"],
+      tags: ["범용성", "완성도", "가독성"],
+      description: "Google이 개발한 Pan-CJK 서체. 방대한 자체 수록과 완성도가 높다.",
+      scores: {
+        readability: 95,
+        brand: 65,
+        versatility: 98,
+        distinction: 50,
+        webPerf: 92,
+      },
+      strengths: [
+        "자체 커버리지 최대 — 누락 글자 없음",
+        "6단계 굵기로 정밀한 타이포그래피 계층 구성",
+        "웹폰트 최적화 우수",
+      ],
+      weaknesses: [
+        "독창성 낮음 — 이미 범용 이미지",
+        "굵은 굵기에서 자간이 다소 빡빡함",
+      ],
+      verdict: "안전하고 완성도 높은 표준 선택.",
+      recommended: false,
+    },
+    mplus: {
+      origin: "M+ FONTS Project",
+      license: "SIL Open Font License",
+      use: ["타이틀"],
+      tags: ["개성", "모던", "디스플레이"],
+      description: "일본 독립 폰트 프로젝트. 표준 고딕과 차별화된 독자적인 자형.",
+      scores: {
+        readability: 78,
+        brand: 80,
+        versatility: 68,
+        distinction: 85,
+        webPerf: 85,
+      },
+      strengths: [
+        "독자적 자형으로 브랜드 차별화 가능",
+        "헤비 굵기에서 임팩트 강함",
+        "완전 무료·오픈소스",
+      ],
+      weaknesses: [
+        "본문 장문 사용 시 가독성 저하",
+        "지나치게 독특해 B2B 맥락에서 리스크",
+      ],
+      verdict: "타이틀 전용으로 강점.",
+      recommended: false,
+    },
+    yugothic: {
+      origin: "Microsoft · Apple",
+      license: "시스템 폰트",
+      use: ["타이틀"],
+      tags: ["클래식", "세련", "디스플레이"],
+      description: "Windows·macOS에 기본 내장. 명조적 획 대비가 특징.",
+      scores: {
+        readability: 78,
+        brand: 85,
+        versatility: 60,
+        distinction: 88,
+        webPerf: 98,
+      },
+      strengths: [
+        "시스템 내장 — 웹폰트 로딩 없음",
+        "명조적 획 대비로 타이틀에서 독보적 품격",
+        "전 환경에서 동일하게 표시",
+      ],
+      weaknesses: [
+        "Linux·Android 환경에서 폴백 필요",
+        "소형 크기에서 획 대비가 뭉개질 수 있음",
+      ],
+      verdict: "타이틀 전용으로 최고 수준의 품격.",
+      recommended: false,
+    },
+  };
+
+  const SCORE_LABELS = {
+    readability: "가독성",
+    brand: "브랜드 적합성",
+    versatility: "범용성",
+    distinction: "차별성",
+    webPerf: "웹 성능",
+  };
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- HEADER                                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<header class="page-header">
+  <div class="header-content">
+    <div>
+      <p class="header-label">Typography Proposal</p>
+      <h1 class="header-title">일본어 폰트 적용 제안</h1>
+    </div>
+    <p class="header-subtitle"> </p>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- PART 1: FONT PROPOSALS                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<section class="section-wrapper proposal-section">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">폰트별 상세 분석</h2>
+  </div>
+
+  <div class="font-cards-container" id="fontCardsContainer">
+    <!-- JavaScript에서 동적으로 생성됨 -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- PART 2: COMPARISON & SLIDERS                                              -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="divider-section">
+  <div class="divider-content">
+    <div>
+      <h2 class="divider-title">커스텀 비교</h2>
+      <p class="divider-subtitle">굵기 · 크기 · 자간 · 행간을 조정하며 실시간 비교</p>
+    </div>
+  </div>
+</div>
+
+<section class="section-wrapper detail-section">
+  <!-- 슬라이더 컨트롤 -->
+  <p class="sliders-label">설정 조정</p>
+  <div class="sliders-panel">
+    <div class="slider-group">
+      <label class="slider-label">
+        굵기 (Weight)
+        <span class="slider-value" id="weightValue">700</span>
+      </label>
+      <input type="range" id="weightSlider" min="300" max="900" step="100" value="700" class="slider-input">
+    </div>
+
+    <div class="slider-group">
+      <label class="slider-label">
+        크기 (Font-size)
+        <span class="slider-value" id="sizeValue">24px</span>
+      </label>
+      <input type="range" id="sizeSlider" min="12" max="60" step="2" value="24" class="slider-input">
+    </div>
+
+    <div class="slider-group">
+      <label class="slider-label">
+        행간 (Line-height)
+        <span class="slider-value" id="leadingValue">1.5</span>
+      </label>
+      <input type="range" id="leadingSlider" min="1.0" max="2.5" step="0.05" value="1.5" class="slider-input">
+    </div>
+
+    <div class="slider-group">
+      <label class="slider-label">
+        자간 (Letter-spacing)
+        <span class="slider-value" id="trackingValue">0.00em</span>
+      </label>
+      <input type="range" id="trackingSlider" min="-5" max="25" step="1" value="0" class="slider-input">
+    </div>
+  </div>
+
+  <!-- 실시간 비교 -->
+  <div class="comparison-preview" id="comparisonPreview">
+    <!-- JavaScript에서 동적으로 생성됨 -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- PART 3: COMPARISON TABLE                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<section class="section-wrapper table-section">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">항목별 점수 비교</h2>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="score-table" id="scoreTable">
+      <!-- JavaScript에서 동적으로 생성됨 -->
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<footer class="page-footer">
+  <p class="footer-year">2026</p>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- SCRIPTS                                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script src="app.js"></script>
+
+</body>
+</html>
