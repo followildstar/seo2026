@@ -1,0 +1,8 @@
+{
+  "sub01": { "prev": "index.html", "next": "sub02.html" },
+  "sub02": { "prev": "sub01.html", "next": "sub03.html" },
+  "sub03": { "prev": "sub02.html", "next": "sub04.html" },
+  "sub04": { "prev": "sub03.html", "next": "sub05.html" },
+  "sub05": { "prev": "sub04.html", "next": "sub06.html" },
+  "sub06": { "prev": "sub05.html" }
+}
